@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Clock</title>
+</head>
+<body>
+<h2>Current Local Times Around The World</h2>
+<div th:if="${city}">
+    <span th:text="'Current Time In City ' + ${city} + ' : ' + ${date}"></span>
+</div>
+<form id="locale" action="/" method="get">
+    <select name="city" onchange="document.getElementById('locale').submit()">
+        <option value="Asia/Ho_Chi_Minh">Select a city</option>
+        <option value="Asia/Ho_Chi_Minh">Ho Chi Minh</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Asia/Hong_Kong">Hong Kong</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Asia/Seoul">Seoul</option>
+        <option value="Europe/London">London</option>
+        <option value="Europe/Madrid">Madrid</option>
+        <option value="America/New_York">New York</option>
+        <option value="Australia/Sydney">Sydney</option>
+        <option value="Argentina/Buenos_Aires">Buenos Aires</option>
+    </select>
+</form>
+</body>
+</html>
